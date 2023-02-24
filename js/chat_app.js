@@ -59,10 +59,34 @@ function bot() {
 
 */
 
+// Escutando o input de nova mensagem
+document.addEventListener('DOMContentLoaded', () => {
+    const newMessageInput = document.getElementById("new-message");
+
+    const handleNewMessage = () => {
+        const message = newMessageInput.value;
+        console.log('Nova mensagem: ', message);
+    };
+    if (newMessageInput) {
+        // Escutando o enter
+        newMessageInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                handleNewMessage();
+            }
+        });
+
+        const sendMessageButton = document.getElementById("new-message-btn");
+        // Escutando o botão
+        if (sendMessageButton) {
+            sendMessageButton.addEventListener("click", handleNewMessage);
+        }
+    }
+});
+
 const createMyMessage = (msg) => {
     time = horaFormatada();
     const chatHistorico = document.getElementById('chat-history');
-    
+
     chatHistorico.appendChild();
 }
 
@@ -85,7 +109,7 @@ const createMyMessage = (msg) => {
 
 function horaFormatada() {
     const data = new Date();
-    const horas = data.getHours().toString().padStart(2, '0');      // adiciona um zero à esquerda se a hora tiver apenas um dígito
-    const minutos = data.getMinutes().toString().padStart(2, '0');  // adiciona um zero à esquerda se os minutos tiverem apenas um dígito
+    const horas = data.getHours().toString().padStart(2, '0'); // adiciona um zero à esquerda se a hora tiver apenas um dígito
+    const minutos = data.getMinutes().toString().padStart(2, '0'); // adiciona um zero à esquerda se os minutos tiverem apenas um dígito
     return `${horas}:${minutos}`;
 }
