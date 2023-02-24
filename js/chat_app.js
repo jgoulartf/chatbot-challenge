@@ -46,32 +46,46 @@ function bot() {
 }
 
 /* 
-    Criar funcao para retornar um elemento HTML do tipo MENSAGEM que segue o seguinte estilo: 
+    Criar funcao para retornar um elemento HTML do tipo MINHA_MENSAGEM que segue o seguinte estilo: 
     
     <li class="clearfix">
         <div class="message-data">
             <span class="message-data-time">10:12 AM, Today</span>
         </div>
-        <div class="message my-message">Are we meeting today?</div>
+        <div class="message my-message">
+        TEXTO DA MENSAGEM AQUI
+        </div>
     </li>
 
 */
 
-const createNewMessage = (msg) => {
+const createMyMessage = (msg) => {
     time = horaFormatada();
-    const chatHistorico = document.getElementById('chat-history')
+    const chatHistorico = document.getElementById('chat-history');
     
-
-
-    chatHistorico.appendChild()
-    
+    chatHistorico.appendChild();
 }
 
+/*
 
+    Criar funcao para retornar um elemento HTML do tipo BOT_MENSAGEM que segue o seguinte estilo: 
+
+    <li class="clearfix">
+        <div class="message-data text-right">
+            <span class="message-data-time">10:10 AM, Today</span>
+            <img src="assets/bot.png" alt="avatar" />
+        </div>
+        <div class="message other-message float-right">
+            TEXTO DA MENSAGEM AQUI
+        </div>
+    </li>
+
+
+*/
 
 function horaFormatada() {
     const data = new Date();
     const horas = data.getHours().toString().padStart(2, '0');      // adiciona um zero à esquerda se a hora tiver apenas um dígito
     const minutos = data.getMinutes().toString().padStart(2, '0');  // adiciona um zero à esquerda se os minutos tiverem apenas um dígito
     return `${horas}:${minutos}`;
-  }
+}

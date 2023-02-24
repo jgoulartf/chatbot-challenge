@@ -88,9 +88,15 @@ body{
     padding-left: 10px
 }
 
+.chat-history {
+    height: 400px; /* altura desejada */
+    overflow-y: scroll; /* habilita a barra de rolagem vertical */
+}
+
 .chat .chat-history {
     padding: 20px;
     border-bottom: 2px solid #fff
+    
 }
 
 .chat .chat-history ul {
@@ -231,6 +237,11 @@ body{
         height: 300px;
         overflow-x: auto
     }
+}
+
+.chat-list{
+    height: 448px; /* altura desejada */
+    overflow-y: scroll; /* habilita a barra de rolagem vertical */ 
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
