@@ -1,53 +1,57 @@
-class ChatBot {
+export class ChatBot {
     // Construtor da classe
     constructor() {
-        msgAtual = 0;       // Variável para controlar mensagem atual do bot                  
+        this.estadoAtual = 0;       // Variável para controlar mensagem atual do bot                  
     }
 
+    getEstadoAtual(){
+        return estadoAtual;
+    }
+    
     // Mensagem inicial do bot
     saudacaoInicial() {
-        return `Olá, sou o chatbot da TeleSoftware!
-        Estou aqui para te direcionar ao melhor atendimento
-        Digite (1) para Financeiro
-        Digite (2) para Orçamentos
-        Digite (3) para Planos
-        Digite (4) para Cancelamento`;
+        return `Olá, sou o chatbot da TeleSoftware!<br>
+        Estou aqui para te direcionar ao melhor atendimento<br>
+        Digite (1) para Financeiro<br>
+        Digite (2) para Orçamentos<br>
+        Digite (3) para Planos<br>
+        Digite (4) para Cancelamento<br>`;
     }
 
     // Mensagem inicial do setor financeiro
     financeiro(){
-        return `Você está no setor financeiro!
-        Qual das opções abaixo mais se encaixa na sua questão?
-        Digite (1) para Segunda via de fatura
-        Digite (2) para Contestamento de fatura
-        Digite (3) para Alteração cadastral
-        Digite (0) para Ir ao menu anterior`
+        return `Você está no setor financeiro!<br>
+        Qual das opções abaixo mais se encaixa na sua questão?<br>
+        Digite (1) para Segunda via de fatura<br>
+        Digite (2) para Contestamento de fatura<br>
+        Digite (3) para Alteração cadastral<br>
+        Digite (0) para Ir ao menu anterior<br>`
     }
 
     // Mensagem inicial do setor orçamentário
     orcamento(){
-        return `Você está no setor de orçamentos!
-        Qual das opções abaixo mais se encaixa na sua questão?
-        Digite (1) para Novo orçamento
-        Digite (2) para Contestar orçamento feito
-        Digite (0) para Ir ao menu anterior`
+        return `Você está no setor de orçamentos!<br>
+        Qual das opções abaixo mais se encaixa na sua questão?<br>
+        Digite (1) para Novo orçamento<br>
+        Digite (2) para Contestar orçamento feito<br>
+        Digite (0) para Ir ao menu anterior<br>`
     }
 
     // Mensagem inicial do setor de planos
     planos(){
-        return `Você está no setor de Planos!
-        Qual das opções abaixo mais se encaixa na sua questão?
-        Digite (1) para Consultar seu plano atual
-        Digite (2) para Verificar os planos existentes
-        Digite (0) para ir ao menu anterior`
+        return `Você está no setor de Planos!<br>
+        Qual das opções abaixo mais se encaixa na sua questão?<br>
+        Digite (1) para Consultar seu plano atual<br>
+        Digite (2) para Verificar os planos existentes<br>
+        Digite (0) para ir ao menu anterior<br>`
     }
 
     // Mensagem inicial do setor de cancelamento
     cancelamento(){
-        return `Você está no setor de Cancelamento!
-        Nossa! Parece que infelizmente não estamos te agradando
-        e você não quer mais os nossos serviços, irei chamar um 
-        de nossos especialistas para te auxiliar.`
+        return `Você está no setor de Cancelamento!<br>
+        Nossa! Parece que infelizmente não estamos te agradando<br>
+        e você não quer mais os nossos serviços, irei chamar um <br>
+        de nossos especialistas para te auxiliar.<br>`
     }
 
     // Processa resposta do usuário a saudação inicial
