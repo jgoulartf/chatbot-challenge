@@ -60,20 +60,21 @@ export class ChatBot {
         msg = msg.toLowerCase();
         switch (msg) {
             case "1" || "um" || "one":
-                
-                return
+                this.estadoAtual++;
+                return this.financeiro()
 
             case "2" || "dois" || "two":
-                return
+                return this.orcamento()
 
             case "3" || "três" || "tres" || "three":
-                return
+                return this.planos()
 
             case "4" || "quatro" || "four":
-                return
+                return this.cancelamento()
 
-            case "5" || "um" || "one":
-                return
+            case "0" || "zero":
+                this.estadoAtual = 1;
+                return this.saudacaoInicial()
 
             default:
                 return "Não compreendo essa resposta, tente novamente...\n" + this.saudacaoInicial();

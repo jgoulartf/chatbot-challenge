@@ -17,13 +17,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             case 0:
                 // Saudação inicial do bot
                 sendBotMessage(bot.saudacaoInicial())
-                
+                bot.estadoAtual++;
+                newMessageInput.value = '';
                 break;
             case 1:
-                bot.processaSaudacao(msg)
-                sendBotMessage(bot.financeiro())
+                sendBotMessage(bot.processaSaudacao(message))
+                
+                newMessageInput.value = '';
+                break;
+            case 2:
+                sendBotMessage(bot.processaSaudacao(message))
+                
+                newMessageInput.value = '';
+                break;
             default:
-                resposta = "Não compreendo essa resposta, tente novamente...<br>" + this.saudacaoInicial();
+                const resposta = "Não compreendo essa resposta, tente novamente...<br>" + bot.saudacaoInicial();
                 sendBotMessage(resposta)
                 break;
         }
